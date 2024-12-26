@@ -1,33 +1,50 @@
-# Pwnagotchi Setup
+# Pwnagotchi Setup for Raspberry Pi 4 & Raspberry Pi Zero W
 
-This repository documents the setup and configuration for the **Pwnagotchi** project, using a **Raspberry Pi Zero W** to capture WPA/WPA2 Wi-Fi handshakes for ethical Wi-Fi network analysis. The project uses a **Pwnagotchi `.img` file** to quickly get the system running with minimal setup.
+This repository provides a step-by-step guide to set up **Pwnagotchi** on a **Raspberry Pi 4** or **Raspberry Pi Zero W**. Pwnagotchi is an AI-powered Wi-Fi penetration testing tool that captures WPA/WPA2 Wi-Fi handshakes.
 
-## Overview
+## Requirements
 
-Pwnagotchi is a Wi-Fi penetration testing tool powered by AI, designed to capture Wi-Fi handshakes from nearby networks for security auditing. The system uses a Raspberry Pi Zero W, and once set up, it autonomously captures Wi-Fi handshakes and continuously learns to improve its capabilities.
+Before setting up Pwnagotchi, make sure you have the following:
+- **Raspberry Pi 4** or **Raspberry Pi Zero W** (or any other supported Raspberry Pi model)
+- **microSD card** (at least 8GB recommended)
+- **Wi-Fi adapter** (if using Raspberry Pi Zero W)
+- **micro-USB power supply** (5V 2A for Pi Zero W and Pi 4)
+- **OLED display** or other supported display
+- **Keyboard and Monitor** (optional for initial setup via SSH)
 
-### Features:
-- **AI-Powered**: Pwnagotchi uses reinforcement learning to improve its handshake capturing ability.
-- **Autonomous Operation**: It runs continuously without human intervention.
-- **Portable**: Uses the compact Raspberry Pi Zero W, which is ideal for on-the-go penetration testing.
-- **Customizable**: Configure settings like Wi-Fi, display, and power management via the `config.toml` file.
-- **Learning & Stats**: Tracks the number of handshakes captured and learns from its environment over time.
-- **Open-Source**: Licensed under the MIT License, anyone can contribute or modify it.
+## Step 1: Download the Pwnagotchi Image
 
-## Setup Instructions
+1. Go to the official Pwnagotchi website: [Pwnagotchi](https://pwnagotchi.ai/) to download the latest `.img` file for Raspberry Pi.
+2. Alternatively, you can download the `.img` file from this repository.
 
-### 1. **Download & Flash the Pwnagotchi Image**
-   - Download the Pwnagotchi `.img` file from this repository (or from the [official Pwnagotchi site](https://pwnagotchi.ai/)).
-   - Flash the `.img` file onto an 8GB or larger microSD card using tools like **Balena Etcher** or **Raspberry Pi Imager**.
-   - After flashing, the microSD card will have two partitions: one for boot and one for the file system.
+## Step 2: Flash the Image to the microSD Card
 
-### 2. **Configure Pwnagotchi (Optional)**
-   - Open the **boot partition** of the flashed microSD card.
-   - Edit the `config.toml` file to customize settings:
-     - Set your **Wi-Fi network** credentials.
-     - Configure the **display type** (OLED, SPI, etc.).
-     - Adjust any other settings for USB tethering, network, and power management.
-   
+You will need to flash the `.img` file onto your microSD card. Here’s how you can do it using **Balena Etcher** or **Raspberry Pi Imager**.
+
+### Using **Balena Etcher**:
+1. Download **Balena Etcher** from [here](https://www.balena.io/etcher/).
+2. Insert your **microSD card** into your computer.
+3. Open **Balena Etcher** and select the downloaded **Pwnagotchi `.img` file**.
+4. Select your **microSD card** as the target.
+5. Click **Flash** to begin the flashing process.
+6. Once complete, safely eject the microSD card from your computer.
+
+### Using **Raspberry Pi Imager**:
+1. Download **Raspberry Pi Imager** from [here](https://www.raspberrypi.org/software/).
+2. Open **Raspberry Pi Imager**, select **Use custom** and choose the **Pwnagotchi `.img` file**.
+3. Select the **microSD card** and click **Write** to flash the image.
+
+## Step 3: Configure Pwnagotchi (Optional)
+
+Once the image is flashed onto the microSD card, you can configure some settings before booting.
+
+1. Insert the **microSD card** into your computer and navigate to the **boot partition**.
+2. Open the **config.toml** file in a text editor.
+3. Configure settings like Wi-Fi, display type, and other preferences:
+   - Set your **Wi-Fi network** credentials.
+   - Select your display type (`oled`, `spi`, etc.).
+   - Set other configurations like enabling USB tethering or power management.
+
    Example settings:
    ```toml
    wifi = true
