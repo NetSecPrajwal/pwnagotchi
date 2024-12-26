@@ -32,14 +32,3 @@ Pwnagotchi is a Wi-Fi penetration testing tool powered by AI, designed to captur
    ```toml
    wifi = true
    display = "oled"
-
-### Key Sections in the README:
-1. **Project Overview**: Provides an introduction to Pwnagotchi and its capabilities.
-2. **Setup Instructions**: Guides the user through downloading, flashing, and configuring the system.
-3. **Optional Configuration**: Describes how to adjust the configuration to fit personal needs.
-4. **Legal Disclaimer**: Emphasizes ethical and legal usage of the tool.
-5. **License**: Information about the open-source MIT license.
-6. **Contributing**: Encourages users to contribute to the project.
-7. **Acknowledgments**: Credits the tools and platforms that helped build the project.
-
-This README provides a clear, concise guide to setting up and using Pwnagotchi, with all the necessary details to get started. Let me know if you need more adjustments!
